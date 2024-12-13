@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #171717;
+  font-family: "Poppins", serif;
+  font-style: normal;
+  color: #CFCBCE;
+}
+
+
+/*ANIMATION UNDERLINE NAVBAR */
+
+.underline-animation {
+  position: relative;
+  overflow: hidden;
+}
+
+.underline-animation::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 0.6px;
+  background-color: #8A34CF;
+  transition: width 0.3s ease-in-out;
+}
+
+.underline-animation:hover::after {
+  width: 100%;
+}
+
+/*NAVBAR SLIDE SIDE ANIMATION*/
+/* Define the slide-in and slide-out animations */
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%); /* Starts offscreen from the left */
+  }
+  to {
+    transform: translateX(0); /* Ends up at its original position */
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateX(0); /* Starts at original position */
+  }
+  to {
+    transform: translateX(-100%); /* Moves offscreen to the left */
+  }
+}
+
+/* Apply animation to the mobile navigation */
+.animate-slideIn {
+  animation: slideIn 0.3s ease-out forwards; /* Smooth slide-in */
+}
+
+.animate-slideOut {
+  animation: slideOut 0.3s ease-in forwards; /* Smooth slide-out */
+}
+
+/* Optional: Add transition effect for smoother opening/closing */
+.md\:hidden {
+  transition: transform 0.3s ease-in-out; /* Smooth transition */
+}
+
+
+
+/*MAIN PAGE MainFadeInUp animation */
+@keyframes MainFadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px); /* Start below */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* End at normal position */
+  }
+}
+
+/* Apply MainFadeInUp animation to form elements */
+.text-mainfadeinup {
+  opacity: 0; /* Initially hidden */
+  transform: translateY(20px); /* Start from below */
+  animation: MainFadeInUp 2s ease-out forwards; /* Apply the MainFadeInUp animation */
+}
+
+button {
+  opacity: 0; /* Initially hidden */
+  transform: translateY(20px); /* Start from below */
+  animation: MainFadeInUp 2s ease-out forwards; /* Apply the MainFadeInUp animation */
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/* Apply animation for typed text */
+.react-typed {
+  opacity: 0; /* Initially hidden */
+  transform: translateY(20px); /* Start from below */
+  animation: MainFadeInUp 2.5s ease-out forwards; /* Slightly delayed MainFadeInUp animation */
+}
+
+/* Button Hover Effect */
+button:hover {
+  transform: scale(1.05); /* Slightly enlarge the button on hover */
+  background-color: #4e1f75; /* Change background color */
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+
+/* MESSAGE PAGE  MessageFadeInUp*/
+@keyframes MessageFadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px); /* Start below */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* End at the original position */
+  }
+}
+
+/* Apply MessageFadeInUp animation */
+.message-fadeinup {
+  opacity: 0; /* Initially hidden */
+  transform: translateY(20px); /* Start below */
+  animation: MessageFadeInUp 1.5s ease-out forwards; /* Fade-in and move up animation */
+}
+
+
+/*MEMORIES PAGE MemoriesFadeInUp */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px); /* Start from below */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* End at original position */
+  }
+}
+
+/* Class for elements to fade in up */
+.memories-fadeinup {
+  opacity: 0; /* Initially hidden */
+  transform: translateY(20px); /* Start from below */
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+/* Class to make the element visible */
+.memories-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
+
+
+
+
+
+
+
+/*CONTACT PAGE ContactFadeInUp animation */
+/* ContactFadeInUp animation */
+@keyframes ContactFadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px); /* Start below */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* End at normal position */
+  }
+}
+
+/* Apply ContactFadeInUp animation */
+.text-contactfadeinup {
+  opacity: 0; /* Initially hidden */
+  transform: translateY(20px); /* Start from below */
+  animation: ContactFadeInUp 2.5s ease-out forwards; /* Apply the ContactFadeInUp animation */
+}
+
+/* Button hover effect */
+button:hover {
+  transform: scale(1.05); /* Slightly enlarge the button on hover */
+  background-color: #4e1f75; /* Change background color */
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+label {
+  opacity: 0; /* Initially hidden */
+  transform: translateY(10px); /* Start from below */
+  animation: ContactFadeInUp 2s ease-out forwards; /* Animation delay for labels */
+}
